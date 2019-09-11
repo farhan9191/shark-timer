@@ -34,7 +34,7 @@ export class TimeDisplayComponent implements OnInit {
     }
   }
 
-  inputChange(hours: number = 0, minutes: number = 5, seconds: number = 0) {  
+  inputChange(hours: number, minutes: number, seconds: number) {  
     const timeVal = hours * this.hourInMs + minutes * this.minuteInMs + seconds * this.secondInMs;
     this.setTime.emit(timeVal);
   }
@@ -47,7 +47,7 @@ export class TimeDisplayComponent implements OnInit {
       //this.inputSeconds = this.seconds;
     //}
   //}
-  
+
   //endSetTime() {
     //this.settingTime$.next(false);
   //}

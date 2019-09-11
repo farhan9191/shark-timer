@@ -6,7 +6,7 @@
           tabindex="0">{{hoursDigitOne}}</span>
     <span class="act-hide time-display-sep">h</span>
   </ng-container>
-  <ng-container *ngIf="minutesDigitTwo || minutesDigitOne">
+  <ng-container *ngIf="minutesDigitTwo || minutesDigitOne || hoursDigitTwo || hoursDigitOne">
     <span class="act-hide time-display-digit"
           tabindex="0">{{minutesDigitTwo}}</span>
     <span class="time-display-digit"
@@ -18,12 +18,7 @@
   <span class="time-display-digit"
         tabindex="0">{{secondsDigitOne}}</span>
   <span class="time-display-sep">s</span>
-  <ng-container *ngIf="showHundriths">
-    <span class="time-display-digit time-display-small-digit"
-          tabindex="0">{{cSecondsDigitTwo}}</span>
-    <span class="time-display-digit time-display-small-digit"
-          tabindex="0">{{cSecondsDigitOne}}</span>
-  </ng-container>
+  
 </div>
 <div *ngIf="canSetTime">
   <mat-form-field>
