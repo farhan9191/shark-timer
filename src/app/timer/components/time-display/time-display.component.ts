@@ -26,24 +26,31 @@ export class TimeDisplayComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  inputChange(hours: number, minutes: number, seconds: number) {
-    const timeVal = hours * this.hourInMs + minutes * this.minuteInMs + seconds * this.secondInMs;
-    this.setTime.emit(timeVal);
-  }
-
-  startSetTime() {
     if (this.canSetTime) {
-      this.settingTime$.next(true);
+      //this.settingTime$.next(true);
       this.inputHours = this.hours;
       this.inputMinutes = this.minutes;
       this.inputSeconds = this.seconds;
     }
   }
-  endSetTime() {
-    this.settingTime$.next(false);
+
+  inputChange(hours: number = 0, minutes: number = 5, seconds: number = 0) {  
+    const timeVal = hours * this.hourInMs + minutes * this.minuteInMs + seconds * this.secondInMs;
+    this.setTime.emit(timeVal);
   }
+
+  //startSetTime() {
+    //if (this.canSetTime) {
+      //this.settingTime$.next(true);
+      //this.inputHours = this.hours;
+      //this.inputMinutes = this.minutes;
+      //this.inputSeconds = this.seconds;
+    //}
+  //}
+  
+  //endSetTime() {
+    //this.settingTime$.next(false);
+  //}
 
   get hours(): number {
     return Math.floor(this.time / this.hourInMs);
