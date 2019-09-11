@@ -36,13 +36,9 @@ export class TimerComponent implements OnInit, OnDestroy {
       this.cd.markForCheck();
     });
 
-    this.timeDisplay.settingTime$.pipe(
-      filter(settingTime => settingTime),
-    ).subscribe(() => this.controls.stop());
-
-    this.controls.timerStart$.pipe(
-      filter(start => start),
-    ).subscribe(() => this.timeDisplay.endSetTime());
+    //this.timeDisplay.settingTime$.pipe(
+      //filter(settingTime => settingTime),
+    //).subscribe(() => this.controls.stop());    
 
   }
 
